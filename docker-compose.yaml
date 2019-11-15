@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  password:
+    build: .
+    environment:
+      PYTHONUNBUFFERED: 'true'
+    volumes:
+      - './password:/opt/password'
+    ports:
+      - '5000:5000'
+    networks: 
+      - 'password'
+  redis:
+    image: redis
+    container_name: redis
+    networks: 
+    - 'password'
+    ports: 
+      - '6379:6379'
+networks:
+ password:
+  
