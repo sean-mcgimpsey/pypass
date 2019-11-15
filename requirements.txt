@@ -1,0 +1,10 @@
+Flask==1.0.2
+flask-bootstrap
+flask-wtf
+flask-sqlalchemy
+flask-migrate
+pyjwt
+pytest==3.0.5
+pytest-cov==2.4.0
+requests
+flask-redis

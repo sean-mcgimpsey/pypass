@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>.</h1>
+    <nav aria-label="...">
+        <ul class="pager">
+        </ul>
+    </nav>
+    <div class="formwrapper"></div>
+    <form method="POST" action="/">
+        <div class="form-field">{{ form.password.label }} {{ form.password(class="form-control", value=securestring) }}
+            {% if form.password.errors %}
+              <ul class="errors">
+                  {% for error in form.password.errors %}
+                  <li>{{ error }}</li>
+                  {% endfor %}
+              </ul>
+            {% endif %}
+        </div>
+        {{ form.submit(class="btn btn-primary") }}
+        {{ form.hidden_tag() }}
+    </form>
+</div>
+{% endblock %}
