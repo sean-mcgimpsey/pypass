@@ -12,7 +12,7 @@ def index():
 #        return render_template('index.html', form=form, securestring=securestring)
     if form.validate_on_submit():
         generated_url = stringGen(stringLength=70, characters="ascii_letters")
-        db.set(generated_url, form.password)
+        db.set(generated_url, form.password.data)
         db.expire(name=generated_url, time=60)
         return password(generated_url, form.password)
 #    print(form.errors)
