@@ -31,7 +31,9 @@ def collect_password_by_url(generatedUrl):
     return render_template('collect.html', password=password)
 
 
+# First release
 # Need to add handling for non-existant password
 # Need to provide a generate secure password button
 # Need to ensure that url is unique
 # Improved UI and navigation.
+# Error handling
