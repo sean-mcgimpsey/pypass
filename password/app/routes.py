@@ -19,13 +19,19 @@ def index():
     else:
         return render_template('index.html', form=form)
 
-
 @app.route('/password')
 def password(generatedUrl, password):
         return render_template('password.html', password=password, generatedUrl=generatedUrl)
 
+# Need to add handling for non-existant password.
 @app.route('/collect/<generatedUrl>')
 def collect_password_by_url(generatedUrl):
     password=db.get(generatedUrl)
     db.expire(generatedUrl, 3)
     return render_template('collect.html', password=password)
+
+
+# Need to add handling for non-existant password
+# Need to provide a generate secure password button
+# Need to ensure that url is unique
+# Improved UI and navigation.
