@@ -7,4 +7,5 @@ pyjwt
 pytest==3.0.5
 pytest-cov==2.4.0
 requests
-flask-redis
+redis==2.10.6
+timedelta

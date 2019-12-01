@@ -5,19 +5,22 @@ import random
 import string
 
 
+from flask import Flask, render_template
+app = Flask(__name__)
+ 
 
-
-
-def passwordGen(stringLength=12):
-    chars = string.printable
+def stringGen(stringLength=12, characters="printable"):
+    chars = getattr(string, characters)
     return ''.join(random.choice(chars) for i in range(stringLength))
 
+
+
 class PasswordForm(FlaskForm):
-    securestring = passwordGen()
+    securestring = stringGen()
     password = StringField('Password', validators=[
         DataRequired(), 
         Length(min=12, message=('Password does not meet requirements.'))
     ])
-    #generate_pass = SubmitField('Generate secure password')
+    generate_pass = SubmitField('Generate secure password')
     submit = SubmitField('Generate Link')
 

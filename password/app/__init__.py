@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.config.from_object(Config)
 bootstrap = Bootstrap(app)
 
-db = redis.StrictRedis(host="redis", port=6379, charset="utf-8", decode_responses=True)
+db = redis.StrictRedis(host="127.0.0.1", port=6379, decode_responses=True)
 
 #db = SQLAlchemy(app)
 
