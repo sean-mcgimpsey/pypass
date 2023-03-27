@@ -7,5 +7,5 @@ pyjwt
 pytest==3.0.5
 pytest-cov==2.4.0
 requests
-redis==2.10.6
+redis==4.5.3
 timedelta
